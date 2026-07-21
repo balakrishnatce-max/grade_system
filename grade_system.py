@@ -7,15 +7,14 @@ def calculate_grade(mark):
         return "C"
     elif mark >= 60 and mark <= 69:
         return "D"
-    elif mark > 100 or mark < 0:
+    elif mark > 100 or mark < 0:#to handle invalid marks(-ve or greater than 100)
         return "Invalid mark. Please enter a mark between 0 and 100."
     else:
         return "E"
-
 
 try:
     mark = int(input("Enter your mark: "))
     grade = calculate_grade(mark)
     print("Your grade is:", grade)
-except ValueError:
+except ValueError:#to handle invalid input like string data
     print("Invalid input. Please enter a valid number.")
